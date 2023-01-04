@@ -1,0 +1,4 @@
+{
+    "httpMethod": "POST",
+    "body": "{\"device_id\":\"DZRJE0991\",\"mac_address\":\"57-FA-E4-86-76-C0\",\"ip_address\":\"249.4.196.145\",\"soil_ph\":3.0,\"soil_moisture\":17.2,\"temperature\":6.8,\"humidity_level\":56.7,\"uv_index\":4.4,\"light_intensity\":48977,\"happened_at\":1668443172}"
+}
