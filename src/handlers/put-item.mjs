@@ -3,6 +3,7 @@
 // Create a DocumentClient that represents the query to add an item
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, PutCommand } from "@aws-sdk/lib-dynamodb";
+import { v4 as uuidv4 } from "uuid";
 const client = new DynamoDBClient({});
 const ddbDocClient = DynamoDBDocumentClient.from(client);
 
@@ -23,7 +24,15 @@ export const putItemHandler = async (event) => {
 
   // Get id and name from the body of the request
   const body = JSON.parse(event.body);
-  const id = body.id;
+
+  let id = null;
+
+  if (body.id) {
+    id = body.id;
+  } else {
+    id = uuidv4();
+  }
+
   const deviceId = body.device_id;
   const macAddress = body.mac_address;
   const ipAddress = body.ip_address;
