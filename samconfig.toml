@@ -6,7 +6,6 @@ stack_name = "sam-smhd-api"
 s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1ny8y25mlfel9"
 s3_prefix = "sam-smhd-api"
 region = "eu-west-2"
-profile = "personal"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 image_repositories = []
