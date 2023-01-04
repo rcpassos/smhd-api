@@ -22,7 +22,11 @@ Resources:
   ApiGatewayEndpoint:
     Type: "AWS::Serverless::Api"
     Properties:
-      StageName: Prod
+      Cors:
+        AllowHeaders: "'*'"
+        AllowMethods: "'*'"
+        AllowOrigin: "'*'"
+      StageName: v1
       Auth:
         ApiKeyRequired: true
         UsagePlan:
@@ -133,7 +137,7 @@ Resources:
 Outputs:
   ApiGateway:
     Description: "The URL is:"
-    Value: !Sub "https://${ApiGatewayEndpoint}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+    Value: !Sub "https://${ApiGatewayEndpoint}.execute-api.${AWS::Region}.amazonaws.com/v1/"
   ApiKey:
     Description: "You can find your API Key in the AWS console: (Put in the request HEADER as 'x-api-key')"
     Value: !Sub "https://console.aws.amazon.com/apigateway/home?region=${AWS::Region}#/api-keys/${ApiGatewayEndpointApiKey}"
