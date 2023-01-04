@@ -32,7 +32,7 @@ export const putItemHandler = async (event) => {
   const humidityLevel = body.humidity_level;
   const uvIndex = body.uv_index;
   const temperature = body.temperature;
-  const lightIntensity = body.lightIntensity;
+  const lightIntensity = body.light_intensity;
   const happenedAt = body.happened_at;
 
   // Creates a new item, or replaces an old item with a new item
