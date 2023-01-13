@@ -45,7 +45,7 @@ export const putItemHandler = async (event) => {
   let happenedAt = body.happened_at;
 
   if (happenedAt) {
-    happenedAt = new Date(happenedAt).toISOString();
+    happenedAt = new Date(happenedAt * 1000).toISOString();
   }
 
   // Creates a new item, or replaces an old item with a new item
