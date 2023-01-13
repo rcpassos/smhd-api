@@ -131,8 +131,8 @@ Resources:
         Name: id
         Type: String
       ProvisionedThroughput:
-        ReadCapacityUnits: 2
-        WriteCapacityUnits: 2
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
 
 Outputs:
   ApiGateway:
