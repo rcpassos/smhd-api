@@ -50,23 +50,25 @@ export const putItemHandler = async (event) => {
 
   // Creates a new item, or replaces an old item with a new item
   // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html#put-property
-  var params = {
+  const params = {
     TableName: tableName,
     Item: {
       id: id,
       device_id: deviceId,
       mac_address: macAddress,
       ip_address: ipAddress,
-      soil_ph: soilPH,
       humidity_level: humidityLevel,
       temperature: temperature,
-      lightIntensity: lightIntensity,
+      light_intensity: lightIntensity,
       soil_moisture: soilMoisture,
-      uv_index: uvIndex,
       happened_at: happenedAt,
       created_at: new Date().toISOString(),
     },
   };
+
+  if (uvIndex) {
+    params.Item.uv_index = uvIndex;
+  }
 
   const response = {
     statusCode: 200,
